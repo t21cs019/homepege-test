@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新二ホンテック株式会社 - Design Pattern C</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#059669',     // エメラルドグリーン（環境・調和）
+                        brandLight: '#D1FAE5', // 薄いグリーン
+                        accent: '#0D9488',    // ティール（知性・技術）
+                        textMain: '#374151',
+                    },
+                    borderRadius: {
+                        'xl': '1.5rem',
+                        '2xl': '2rem',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Zen Kaku Gothic New', sans-serif; }
+        .hero-pattern {
+            background-color: #f0fdf4;
+            background-image: radial-gradient(#059669 0.5px, transparent 0.5px), radial-gradient(#059669 0.5px, #f0fdf4 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="text-textMain bg-white">
+
+    <div class="fixed w-full z-50 px-4 py-4">
+        <header class="container mx-auto bg-white/90 backdrop-blur-md shadow-lg rounded-full px-6 py-3 flex justify-between items-center">
+            <div class="text-xl font-bold text-brand flex items-center">
+                <span class="w-8 h-8 bg-brand text-white rounded-full flex items-center justify-center mr-2">S</span>
+                新二ホンテック
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-bold text-gray-600">
+                <a href="#" class="hover:text-brand transition">私たちについて</a>
+                <a href="#" class="hover:text-brand transition">サービス</a>
+                <a href="#" class="hover:text-brand transition">サステナビリティ</a>
+                <a href="#" class="bg-brand text-white px-5 py-2 rounded-full hover:bg-emerald-700 transition">お問い合わせ</a>
+            </nav>
+        </header>
+    </div>
+
+    <section class="relative pt-32 pb-20 overflow-hidden">
+        <div class="absolute inset-0 hero-pattern z-0"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <span class="inline-block bg-brandLight text-brand font-bold px-4 py-1 rounded-full text-sm mb-6">
+                        人と技術の調和を目指して
+                    </span>
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                        次の世代へつなぐ、<br>
+                        <span class="text-brand">やさしいテクノロジー。</span>
+                    </h1>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        工場の自動化から、省エネルギー設備の導入まで。<br>
+                        私たちは技術の力で、持続可能な産業の未来をつくります。
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-brand text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:bg-emerald-700 transition transform hover:-translate-y-1">
+                            事業内容を見る
+                        </a>
+                        <a href="#" class="bg-white text-brand border-2 border-brand font-bold py-3 px-8 rounded-full hover:bg-brandLight transition">
+                            採用情報
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="明るいオフィスとグリーン" class="w-full h-auto object-cover transform hover:scale-105 transition duration-700">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-6 text-white">
+                            <p class="font-bold">Creating a Green Future</p>
+                        </div>
+                    </div>
+                    <div class="absolute -z-10 -top-10 -right-10 w-40 h-40 bg-yellow-200 rounded-full blur-3xl opacity-50"></div>
+                    <div class="absolute -z-10 -bottom-10 -left-10 w-40 h-40 bg-brandLight rounded-full blur-3xl opacity-80"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 text-gray-800">Our Solutions</h2>
+                <p class="text-gray-500">お客様の課題に、最適な「解」を。</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        ⚡
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">電気設備工事</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">安全第一の施工で、インフラを支えます。工場の受変電から一般電気工事まで対応。</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition duration-300 border-2 border-brand/20">
+                    <div class="w-14 h-14 bg-brandLight text-brand rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        🤖
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">FA・自動制御</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">PLCプログラム設計により、生産ラインの効率化と自動化を実現します。</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+                        🌱
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">省エネ・環境</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">LED照明、太陽光発電など、環境負荷を低減するエネルギーソリューションを提案。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-10 border-t border-gray-100">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="text-xl font-bold text-gray-800">新二ホンテック株式会社</span>
+                <p class="text-xs text-gray-500 mt-1">Yamanashi, Japan</p>
+            </div>
+            <div class="flex space-x-6 text-sm text-gray-500">
+                <a href="#" class="hover:text-brand">Home</a>
+                <a href="#" class="hover:text-brand">Contact</a>
+                <a href="#" class="hover:text-brand">Privacy</a>
+            </div>
+            <p class="text-xs text-gray-400 mt-4 md:mt-0">&copy; 2024 Shinnihontec Co., Ltd.</p>
+        </div>
+    </footer>
+</body>
+</html>

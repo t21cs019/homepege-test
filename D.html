@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新二ホンテック株式会社 - Design Pattern D (Fixed)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techBlack: '#1a1a1a',
+                        techGray: '#f4f4f5',
+                        techRed: '#ef4444',
+                    },
+                    fontFamily: {
+                        mono: ['Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
+                        sans: ['Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* グリッド線の装飾 */
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+                linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+        }
+        /* 縦書きテキスト用 */
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+        /* メニュー開閉のアニメーション */
+        .menu-overlay {
+            transition: transform 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-white text-techBlack font-sans relative overflow-x-hidden">
+
+    <header class="border-b border-black md:border-b-0 md:fixed md:left-0 md:top-0 md:h-screen md:w-20 md:border-r bg-white z-50 flex md:flex-col justify-between items-center p-4">
+        <a href="#" class="font-black text-xl tracking-tighter hover:text-techRed transition">SNT</a>
+        
+        <div class="hidden md:block vertical-text text-xs font-mono tracking-widest text-gray-400 select-none">
+            EST. 1946 / YAMANASHI
+        </div>
+
+        <button id="menu-btn" class="w-8 h-8 flex flex-col justify-center gap-1.5 group cursor-pointer relative z-50">
+            <span class="block w-full h-0.5 bg-black transition-all duration-300 group-hover:bg-techRed origin-center" id="bar1"></span>
+            <span class="block w-full h-0.5 bg-black transition-all duration-300 group-hover:bg-techRed" id="bar2"></span>
+            <span class="block w-full h-0.5 bg-black transition-all duration-300 group-hover:bg-techRed origin-center" id="bar3"></span>
+        </button>
+    </header>
+
+    <nav id="global-nav" class="fixed inset-0 bg-techBlack z-40 transform translate-x-full menu-overlay flex flex-col justify-center items-center text-white">
+        <ul class="space-y-8 text-center">
+            <li><a href="#" class="text-3xl md:text-5xl font-black hover:text-techRed transition block menu-link">01 / HOME</a></li>
+            <li><a href="#" class="text-3xl md:text-5xl font-black hover:text-techRed transition block menu-link">02 / ABOUT</a></li>
+            <li><a href="#" class="text-3xl md:text-5xl font-black hover:text-techRed transition block menu-link">03 / SERVICE</a></li>
+            <li><a href="#" class="text-3xl md:text-5xl font-black hover:text-techRed transition block menu-link">04 / RECRUIT</a></li>
+            <li><a href="#" class="text-3xl md:text-5xl font-black hover:text-techRed transition block menu-link">05 / CONTACT</a></li>
+        </ul>
+        <div class="absolute bottom-10 font-mono text-xs text-gray-500">
+            // NAVIGATING SYSTEM...
+        </div>
+    </nav>
+
+    <main class="md:ml-20 transition-all duration-300" id="main-content">
+        <section class="min-h-screen grid md:grid-cols-2 border-b border-black">
+            <div class="p-8 md:p-16 flex flex-col justify-center bg-white relative order-2 md:order-1">
+                <div class="absolute top-0 left-0 p-4 font-mono text-xs text-gray-500">
+                    // SYSTEM_STATUS: ONLINE<br>
+                    // TARGET: FUTURE_INDUSTRY
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black leading-none mb-8 tracking-tighter">
+                    CTRL<br>
+                    <span class="text-techRed">+</span><br>
+                    BUILD
+                </h1>
+                <p class="font-mono text-sm md:text-base max-w-md mb-12 border-l-2 border-black pl-4">
+                    確実な「配線」と、最適な「論理」。<br>
+                    私たちは工場の神経系を構築する<br>
+                    エンジニアリング・カンパニーです。
+                </p>
+                <a href="#" class="inline-block border border-black px-8 py-4 font-bold hover:bg-black hover:text-white transition w-max">
+                    PROJECTS_VIEW ->
+                </a>
+            </div>
+            <div class="bg-techGray relative border-t md:border-t-0 md:border-l border-black grid-bg flex items-center justify-center overflow-hidden h-64 md:h-auto order-1 md:order-2">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                     class="w-3/4 h-auto object-contain filter grayscale contrast-125 mix-blend-multiply" 
+                     alt="Circuit Image">
+                <div class="absolute bottom-4 right-4 bg-black text-white px-2 py-1 font-mono text-xs">
+                    FIG.01: SEMICONDUCTOR
+                </div>
+            </div>
+        </section>
+
+        <section class="grid md:grid-cols-3">
+            <a href="#" class="block border-b border-black md:border-r p-10 hover:bg-techRed hover:text-white transition group">
+                <div class="font-mono text-xs mb-4 group-hover:text-black transition">01 / WIRING</div>
+                <h3 class="text-2xl font-bold mb-4">電気設備工事</h3>
+                <p class="text-sm opacity-80">Infrastructure Design & Construction</p>
+                <div class="mt-8 text-right opacity-0 group-hover:opacity-100 transition transform translate-x-[-10px] group-hover:translate-x-0">→</div>
+            </a>
+            <a href="#" class="block border-b border-black md:border-r p-10 hover:bg-techRed hover:text-white transition group">
+                <div class="font-mono text-xs mb-4 group-hover:text-black transition">02 / CONTROL</div>
+                <h3 class="text-2xl font-bold mb-4">FAシステム制御</h3>
+                <p class="text-sm opacity-80">PLC Programming & Automation</p>
+                <div class="mt-8 text-right opacity-0 group-hover:opacity-100 transition transform translate-x-[-10px] group-hover:translate-x-0">→</div>
+            </a>
+            <a href="#" class="block border-b border-black p-10 hover:bg-techRed hover:text-white transition group">
+                <div class="font-mono text-xs mb-4 group-hover:text-black transition">03 / MAINTENANCE</div>
+                <h3 class="text-2xl font-bold mb-4">保守・管理</h3>
+                <p class="text-sm opacity-80">System Check & Debugging</p>
+                <div class="mt-8 text-right opacity-0 group-hover:opacity-100 transition transform translate-x-[-10px] group-hover:translate-x-0">→</div>
+            </a>
+        </section>
+
+        <section class="p-8 md:p-16 bg-gray-100">
+            <div class="flex flex-col md:flex-row justify-between items-end border-b-2 border-black pb-4">
+                <h2 class="text-4xl font-black">NEWS</h2>
+                <a href="#" class="font-mono text-sm underline hover:text-techRed">ARCHIVES</a>
+            </div>
+            <ul class="mt-8 space-y-4">
+                <li class="flex flex-col md:flex-row md:items-center gap-4 text-sm border-b border-gray-300 pb-2">
+                    <span class="font-mono font-bold">2023.10.15</span>
+                    <span class="bg-black text-white px-2 text-xs">PRESS</span>
+                    <span class="hover:text-techRed cursor-pointer transition">コーポレートサイトをリニューアルしました。</span>
+                </li>
+                <li class="flex flex-col md:flex-row md:items-center gap-4 text-sm border-b border-gray-300 pb-2">
+                    <span class="font-mono font-bold">2023.09.20</span>
+                    <span class="bg-gray-500 text-white px-2 text-xs">WORKS</span>
+                    <span class="hover:text-techRed cursor-pointer transition">県内某食品工場の自動化ライン制御盤を納入しました。</span>
+                </li>
+            </ul>
+        </section>
+
+        <footer class="bg-black text-white p-8 text-center font-mono text-xs">
+             // SHINNIHONTEC CO., LTD. ALL RIGHTS RESERVED.
+        </footer>
+    </main>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.getElementById('global-nav');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                // メニューを開く
+                nav.classList.remove('translate-x-full');
+                // ハンバーガーアイコンを×印にするアニメーション
+                bar1.classList.add('rotate-45', 'translate-y-2');
+                bar2.classList.add('opacity-0');
+                bar3.classList.add('-rotate-45', '-translate-y-2', 'bg-white'); // 背景が黒になるので白に変更
+                bar1.classList.add('bg-white');
+            } else {
+                // メニューを閉じる
+                nav.classList.add('translate-x-full');
+                // ハンバーガーアイコンを元に戻す
+                bar1.classList.remove('rotate-45', 'translate-y-2', 'bg-white');
+                bar2.classList.remove('opacity-0');
+                bar3.classList.remove('-rotate-45', '-translate-y-2', 'bg-white');
+            }
+        });
+
+        // リンクをクリックしたらメニューを閉じる
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                nav.classList.add('translate-x-full');
+                bar1.classList.remove('rotate-45', 'translate-y-2', 'bg-white');
+                bar2.classList.remove('opacity-0');
+                bar3.classList.remove('-rotate-45', '-translate-y-2', 'bg-white');
+            });
+        });
+    </script>
+</body>
+</html>

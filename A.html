@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新二ホンテック株式会社 - FA・電気設備のプロフェッショナル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwindの設定拡張（任意でカラーなどを追加可能）
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#003366', // 濃い青（信頼感）
+                        secondary: '#0099cc', // 明るい青（先進性）
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        /* メインビジュアルの背景設定（動画の代わりに静止画を使用中） */
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        /* 動画を使う場合はこちらを有効化してHTML側を調整してください
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-container video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        */
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 mr-2 text-secondary">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                </svg>
+                新二ホンテック株式会社
+            </a>
+            <nav class="hidden md:flex space-x-8 font-bold text-primary">
+                <a href="#about" class="hover:text-secondary transition">私たちについて</a>
+                <a href="#service" class="hover:text-secondary transition">事業紹介</a>
+                <a href="#news" class="hover:text-secondary transition">新着情報</a>
+                <a href="#contact" class="hover:text-secondary transition">お問い合わせ</a>
+            </nav>
+            <div class="md:hidden">
+                <button type="button" class="text-primary hover:text-secondary focus:outline-none">
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative h-screen flex items-center justify-center text-white hero-bg">
+        <div class="absolute inset-0 bg-primary opacity-60"></div>
+        <div class="relative z-10 text-center px-4 container mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                技術と誠意で<br class="md:hidden">未来を動かす。
+            </h1>
+            <p class="text-xl md:text-2xl mb-10">
+                創業75年。FAシステムと電気設備の<br class="md:hidden">トータルソリューションパートナー。
+            </p>
+            <a href="#contact" class="bg-secondary hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full transition duration-300 shadow-lg inline-block">
+                お問い合わせはこちら
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12">私たちについて</h2>
+            <div class="flex flex-wrap -mx-4 items-center">
+                <div class="w-full md:w-1/2 px-4 mb-8 md:mb-0">
+                    <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="技術者と制御盤" class="rounded-lg shadow-xl">
+                </div>
+                <div class="w-full md:w-1/2 px-4 text-left">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">伝統と革新の融合。100年企業を目指して。</h3>
+                    <p class="text-lg leading-relaxed mb-6">
+                        1946年の創業以来、「技術と誠意」を社是に、地域の産業発展に貢献してまいりました。長い歴史の中で培った現場対応力と、最新のシーケンス制御（PLC）技術を融合させ、お客様の工場の安定稼働と生産性向上を実現します。
+                    </p>
+                    <a href="#" class="text-secondary font-bold hover:underline flex items-center">
+                        会社案内を見る
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 ml-1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-12">事業紹介</h2>
+            <p class="text-lg mb-16 max-w-3xl mx-auto">
+                工場の自動化から電気設備の設計・施工、メンテナンスまで、ワンストップで対応いたします。
+            </p>
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 h-full">
+                        <div class="text-secondary mb-6 flex justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">電気設備工事</h3>
+                        <p class="text-left">工場、ビル、公共施設から住宅まで、受変電設備や屋内配線など幅広い電気工事に対応。安全で確実な施工をお約束します。</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 h-full border-b-4 border-secondary">
+                        <div class="text-secondary mb-6 flex justify-center">
+                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 01-3-3m3 3a3 3 0 100 6h13.5a3 3 0 100-6m-16.5-3a3 3 0 013-3h13.5a3 3 0 013 3m-16.5 0h13.5" />
+                              </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">自動制御(PLC)・盤製作</h3>
+                        <p class="text-left">シーケンスソフトの設計から制御盤の製作、現地調整まで。お客様の生産ラインに最適な自動化システムを構築します。</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3 px-4 mb-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition duration-300 h-full">
+                        <div class="text-secondary mb-6 flex justify-center">
+                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                              </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-primary">省エネ・メンテナンス</h3>
+                        <p class="text-left">LED照明への更新や太陽光発電設備の設置、既存設備のトラブルシューティングなど、工場の課題を解決します。</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="mt-8 bg-primary hover:bg-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300 inline-block">
+                事業内容を詳しく見る
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-primary text-white text-center px-4">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">お問い合わせ</h2>
+        <p class="text-xl mb-10 max-w-2xl mx-auto">
+            設備のトラブル、自動化のご相談など、お気軽にお問い合わせください。<br>
+            経験豊富なスタッフが迅速に対応いたします。
+        </p>
+        <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+            <a href="tel:055-123-4567" class="bg-white text-primary hover:bg-gray-100 font-bold py-4 px-10 rounded-full transition duration-300 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a3 3 0 003-3v-2.25a3 3 0 00-3-3.75H19.5m-13.5-3.75a3 3 0 00-3 3.75v2.25a3 3 0 003 3h2.25a3 3 0 003-3v-2.25a3 3 0 00-3-3.75H9m0 0c0-8.284 6.716-15 15-15v2.25a3 3 0 00-3.75 3H15m-3.75 0H9m0 0c-8.284 0-15 6.716-15 15V19.5a3 3 0 003 3h2.25a3 3 0 003-3V15a3 3 0 00-3-3.75H3.75z" />
+                  </svg>
+                055-XXX-XXXX (仮)
+            </a>
+            <a href="#" class="bg-secondary hover:bg-blue-500 text-white font-bold py-4 px-10 rounded-full transition duration-300 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                お問い合わせフォーム
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+            <div class="mb-8 md:mb-0">
+                <h3 class="text-2xl font-bold text-white flex items-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2 text-secondary">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                    </svg>
+                    新二ホンテック株式会社
+                </h3>
+                <p class="text-sm">
+                    〒400-xxxx<br>
+                    山梨県甲府市xxxxxx (仮)<br>
+                    TEL: 055-xxx-xxxx
+                </p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">リンク</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">ホーム</a></li>
+                    <li><a href="#" class="hover:text-white transition">私たちについて</a></li>
+                    <li><a href="#" class="hover:text-white transition">事業紹介</a></li>
+                    <li><a href="#" class="hover:text-white transition">新着情報</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4">その他</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">会社概要</a></li>
+                    <li><a href="#" class="hover:text-white transition">採用情報</a></li>
+                    <li><a href="#" class="hover:text-white transition">お問い合わせ</a></li>
+                    <li><a href="#" class="hover:text-white transition">プライバシーポリシー</a></li>
+                </ul>
+            </div>
+             <div>
+                <div class="bg-gray-700 h-40 flex items-center justify-center rounded">
+                    <span>Google Maps Area</span>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-4 mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+            <p>&copy; SHINNIHONTEC CO., LTD. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector('header button');
+        const nav = document.querySelector('header nav');
+        menuButton.addEventListener('click', () => {
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-16');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('w-full');
+            nav.classList.toggle('bg-white');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('shadow-md');
+        });
+    </script>
+</body>
+</html>
