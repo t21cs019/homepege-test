@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>案②：王道の階層型 - 新日本テック</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <a href="index.html" class="fixed bottom-4 right-4 z-50 bg-gray-800 text-white px-4 py-2 rounded-full shadow-lg font-bold text-sm hover:bg-black transition">← 一覧に戻る</a>
+
+    <header class="bg-white shadow-md fixed w-full z-40">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-900 flex items-center">
+                新日本テック株式会社
+            </div>
+            <nav class="hidden md:flex space-x-8 font-bold text-blue-900">
+                <a href="#" class="hover:text-blue-500 transition">ホーム</a>
+                <a href="#" class="hover:text-blue-500 transition">会社概要</a>
+                <a href="#" class="hover:text-blue-500 transition">事業紹介</a>
+                <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="relative h-[80vh] flex items-center justify-center">
+        <div class="absolute inset-0">
+            <img src="image1.jpg" class="w-full h-full object-cover" alt="社屋">
+            <div class="absolute inset-0 bg-blue-900/50 mix-blend-multiply"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight drop-shadow-md">
+                技術と信頼で<br>地域社会に貢献する。
+            </h1>
+            <p class="text-xl md:text-2xl mb-10 drop-shadow-md">
+                電気設備・自動制御のトータルパートナー
+            </p>
+            <div class="bg-white/90 text-blue-900 px-6 py-3 inline-block rounded-lg shadow-lg">
+                <p class="font-bold">おかげさまで創立XX周年</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 bg-gray-50 border-b">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-xl font-bold text-blue-900 mb-4 flex items-center">
+                <span class="w-2 h-8 bg-blue-600 mr-2 rounded"></span>News
+            </h2>
+            <ul class="bg-white p-6 rounded shadow-sm divide-y">
+                <li class="py-3 flex flex-col md:flex-row gap-2">
+                    <span class="text-gray-500 text-sm">2026.02.10</span>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded w-max">お知らせ</span>
+                    <a href="#" class="hover:text-blue-600">ホームページをリニューアルしました。</a>
+                </li>
+                <li class="py-3 flex flex-col md:flex-row gap-2">
+                    <span class="text-gray-500 text-sm">2026.01.15</span>
+                    <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded w-max">イベント</span>
+                    <a href="#" class="hover:text-blue-600">創立記念イベントを開催いたしました。</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="bg-blue-900 text-white py-8 text-center mt-10">
+        <div class="container mx-auto px-4">
+            <p class="font-bold text-lg mb-2">新日本テック株式会社</p>
+            <p class="text-blue-200 text-sm">〒400-XXXX 山梨県甲府市...</p>
+        </div>
+    </footer>
+</body>
+</html>
