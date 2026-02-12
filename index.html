@@ -3,79 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新日本テック様 ホームページリニューアル案</title>
+    <title>新日本テック様 HPリニューアル検討資料</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+        body { font-family: 'Noto Sans JP', sans-serif; }
+    </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans p-6">
+<body class="bg-slate-100 text-slate-800 p-4 md:p-8">
 
-    <div class="max-w-2xl mx-auto">
-        <h1 class="text-2xl font-bold text-center mb-2">ホームページ デザイン検討資料</h1>
-        <p class="text-center text-gray-500 mb-8 text-sm">作成日: 2026.02.10 / 作成者: アルバイト（大学院生）</p>
+    <div class="max-w-5xl mx-auto">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">ホームページ デザイン構成案</h1>
+            <p class="text-slate-600">リニューアルの目的に合わせた4つのパターンを作成しました。</p>
+            <p class="text-slate-600">「デモ」と「実際の参考事例」を見比べてください。</p>
+            <p class="text-xs text-slate-400 mt-2">最終更新: 2026.02.10</p>
+        </header>
 
-        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <h2 class="text-xl font-bold border-b pb-2 mb-4 flex items-center">
-                <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded mr-2">提案</span>
-                今回作成したデモサイト
-            </h2>
-            <div class="grid gap-4">
-                <a href="type1.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition group">
-                    <div class="font-bold text-blue-700 group-hover:text-blue-900">案①：1ページ完結型 (LP風)</div>
-                    <div class="text-xs text-gray-500 mt-1">ベース：Design Pattern B (黒/インダストリアル)</div>
-                    <p class="text-sm mt-2">縦スクロールで「ストーリー」を見せる、今風のデザイン。</p>
-                </a>
-                <a href="type2.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition group">
-                    <div class="font-bold text-blue-700 group-hover:text-blue-900">案②：王道の階層型</div>
-                    <div class="text-xs text-gray-500 mt-1">ベース：Design Pattern A (青/信頼感)</div>
-                    <p class="text-sm mt-2">銀行や大手企業のような、最も信頼感のある構成。</p>
-                </a>
-                <a href="type3.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition group">
-                    <div class="font-bold text-blue-700 group-hover:text-blue-900">案③：グリッド/カード型</div>
-                    <div class="text-xs text-gray-500 mt-1">ベース：Design Pattern C (緑/親しみ)</div>
-                    <p class="text-sm mt-2">情報をカード状に並べ、カタログのように選べるデザイン。</p>
-                </a>
-                <a href="type4.html" class="block p-4 border border-gray-200 rounded-lg hover:bg-blue-50 hover:border-blue-300 transition group">
-                    <div class="font-bold text-blue-700 group-hover:text-blue-900">案④：オープニング演出型</div>
-                    <div class="text-xs text-gray-500 mt-1">ベース：Design Pattern D (テック/洗練)</div>
-                    <p class="text-sm mt-2">最初に写真が全画面で表示され、強い印象を残すタイプ。</p>
-                </a>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col relative">
+                <div class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">採用・ブランディング</div>
+                <div class="p-6 flex-1">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold mr-3 text-lg">1</div>
+                        <h2 class="text-xl font-bold text-slate-800">1ページ完結型 (LP風)</h2>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">スクロールで物語を読ませる今風の構成</p>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">
+                        縦に長いページ構成で、会社の歴史や強みを順番に見せるスタイル。スマホでの閲覧性が最も高く、採用サイトなどで人気です。
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="type1.html" class="bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-bold text-sm transition shadow-md">
+                            <i class="fas fa-desktop mr-1"></i> デモを見る
+                        </a>
+                        <a href="https://sasaki-inc.co.jp/recruit/" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-center py-3 rounded-lg font-bold text-sm transition border border-slate-300">
+                            <i class="fas fa-external-link-alt mr-1"></i> 参考：㈱ササキ
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="bg-white rounded-xl shadow-md p-6">
-            <h2 class="text-xl font-bold border-b pb-2 mb-4 flex items-center">
-                <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded mr-2">参考</span>
-                イメージに近い他社サイト
-            </h2>
-            <div class="grid gap-3 text-sm">
-                <a href="https://sasaki-inc.co.jp/recruit/" target="_blank" class="flex items-center p-3 hover:bg-gray-50 rounded transition">
-                    <span class="w-8 h-8 flex items-center justify-center bg-gray-200 rounded-full mr-3 text-gray-600">1</span>
-                    <div>
-                        <div class="font-bold">株式会社ササキ（採用）</div>
-                        <div class="text-gray-500 text-xs">スクロールで写真が大きく動く</div>
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col relative">
+                <div class="absolute top-0 right-0 bg-slate-700 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">信頼・BtoB取引</div>
+                <div class="p-6 flex-1">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center font-bold mr-3 text-lg">2</div>
+                        <h2 class="text-xl font-bold text-slate-800">王道の階層型</h2>
                     </div>
-                </a>
-                <a href="https://www.miyazaki-ss.co.jp/" target="_blank" class="flex items-center p-3 hover:bg-gray-50 rounded transition">
-                    <span class="w-8 h-8 flex items-center justify-center bg-gray-200 rounded-full mr-3 text-gray-600">2</span>
-                    <div>
-                        <div class="font-bold">有限会社 宮崎製作所</div>
-                        <div class="text-gray-500 text-xs">王道の製造業サイト</div>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">欲しい情報へ最短で案内するカタログ構成</p>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">
+                        トップページはシンプルにし、メニューから各ページへ飛ぶ形式。銀行や大手メーカーのような「しっかりした」印象を与えます。
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="type2.html" class="bg-slate-700 hover:bg-slate-800 text-white text-center py-3 rounded-lg font-bold text-sm transition shadow-md">
+                            <i class="fas fa-desktop mr-1"></i> デモを見る
+                        </a>
+                        <a href="https://www.miyazaki-ss.co.jp/" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-center py-3 rounded-lg font-bold text-sm transition border border-slate-300">
+                            <i class="fas fa-external-link-alt mr-1"></i> 参考：宮崎製作所
+                        </a>
                     </div>
-                </a>
-                <a href="https://muuuuu.org/" target="_blank" class="flex items-center p-3 hover:bg-gray-50 rounded transition">
-                    <span class="w-8 h-8 flex items-center justify-center bg-gray-200 rounded-full mr-3 text-gray-600">3</span>
-                    <div>
-                        <div class="font-bold">MUUUUU.ORG (ギャラリー)</div>
-                        <div class="text-gray-500 text-xs">グリッド型のレイアウト参考</div>
-                    </div>
-                </a>
-                <a href="https://www.toyo-seiko.co.jp/" target="_blank" class="flex items-center p-3 hover:bg-gray-50 rounded transition">
-                    <span class="w-8 h-8 flex items-center justify-center bg-gray-200 rounded-full mr-3 text-gray-600">4</span>
-                    <div>
-                        <div class="font-bold">株式会社 東洋精工</div>
-                        <div class="text-gray-500 text-xs">オープニング演出の参考</div>
-                    </div>
-                </a>
+                </div>
             </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col relative">
+                <div class="absolute top-0 right-0 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">製品紹介・ニュース</div>
+                <div class="p-6 flex-1">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center font-bold mr-3 text-lg">3</div>
+                        <h2 class="text-xl font-bold text-slate-800">グリッド/カード型</h2>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">多くの情報を並列に見せる一覧デザイン</p>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">
+                        画面にパネルが並び、直感的に選べるスタイル。ニュースや製品、イベント情報などを並列にアピールでき、更新頻度が高い会社向きです。
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="type3.html" class="bg-teal-600 hover:bg-teal-700 text-white text-center py-3 rounded-lg font-bold text-sm transition shadow-md">
+                            <i class="fas fa-desktop mr-1"></i> デモを見る
+                        </a>
+                        <a href="https://muuuuu.org/" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-center py-3 rounded-lg font-bold text-sm transition border border-slate-300">
+                            <i class="fas fa-external-link-alt mr-1"></i> 参考：MUUUUU
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden flex flex-col relative">
+                <div class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">周年記念・イベント</div>
+                <div class="p-6 flex-1">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold mr-3 text-lg">4</div>
+                        <h2 class="text-xl font-bold text-slate-800">オープニング演出型</h2>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 font-bold">第一印象で心を掴むインパクト重視</p>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">
+                        サイトを開いた瞬間に、全画面で周年写真やロゴを表示。テレビCMのような演出で強い印象を残します。
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        <a href="type4.html" class="bg-indigo-600 hover:bg-indigo-700 text-white text-center py-3 rounded-lg font-bold text-sm transition shadow-md">
+                            <i class="fas fa-desktop mr-1"></i> デモを見る
+                        </a>
+                        <a href="https://www.toyo-seiko.co.jp/" target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-600 text-center py-3 rounded-lg font-bold text-sm transition border border-slate-300">
+                            <i class="fas fa-external-link-alt mr-1"></i> 参考：東洋精工
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
