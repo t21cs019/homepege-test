@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社 新ニホンテック | 技術と誠意で80年、そして100年へ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#003366', // 濃い青（信頼・伝統）
+                        secondary: '#0099cc', // 明るい青（技術・革新）
+                        accent: '#f59e0b', // 金・オレンジ（強調・アクセント）
+                        light: '#f3f4f6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; }
+        .font-eng { font-family: 'Oswald', sans-serif; }
+
+        /* オープニング演出 */
+        #opening-splash {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #111;
+            z-index: 9999;
+            display: flex; justify-content: center; align-items: center; flex-direction: column;
+            transition: opacity 1.5s ease-in-out, visibility 1.5s;
+        }
+        .splash-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        
+        .zoom-img { animation: zoomIn 4s ease-out forwards; }
+        @keyframes zoomIn { 0% { transform: scale(1.0); opacity: 0.5; } 100% { transform: scale(1.1); opacity: 0.8; } }
+        .fade-up { animation: fadeUp 1s ease-out 0.5s forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+        .hero-bg {
+            background-image: url('image1.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        @media (min-width: 768px) {
+            .hero-bg { background-attachment: fixed; }
+        }
+        .scroll-smooth { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="text-gray-800 scroll-smooth">
+
+    <div id="opening-splash">
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="image1.jpg" class="w-full h-full object-cover zoom-img grayscale" alt="Opening">
+            <div class="absolute inset-0 bg-black/70"></div>
+        </div>
+        <div class="relative z-10 text-center text-white p-4">
+            <p class="text-sm md:text-lg tracking-[0.3em] mb-4 text-accent fade-up font-eng">SINCE 1946</p>
+            <h1 class="text-4xl md:text-7xl font-black mb-4 tracking-wider fade-up leading-tight font-eng">
+                80th<br>ANNIVERSARY
+            </h1>
+            <div class="w-16 h-1 bg-white mx-auto mb-6 fade-up"></div>
+            <p class="text-sm md:text-base tracking-widest fade-up text-gray-300">
+                技術と誠意で80年、そして100年へ<br>
+                株式会社 新ニホンテック
+            </p>
+        </div>
+    </div>
+
+    <header class="bg-white/95 backdrop-blur shadow-md fixed w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-xl md:text-2xl font-bold text-primary flex items-center group leading-none">
+                <div class="bg-primary text-white p-1 rounded mr-2 group-hover:bg-secondary transition">
+                    <span class="font-eng">SNT</span>
+                </div>
+                <div>
+                    <span class="block text-sm text-gray-500 font-normal">電気工事・自動制御・CO2削減</span>
+                    株式会社 新ニホンテック
+                </div>
+            </a>
+            
+            <nav class="hidden xl:flex space-x-5 text-sm font-bold text-gray-700 items-center">
+                <a href="#policy" class="hover:text-secondary transition py-2">会社方針</a>
+                <a href="#company" class="hover:text-secondary transition py-2">企業概要</a>
+                <a href="#service" class="hover:text-secondary transition py-2">業務内容</a>
+                <a href="#recruit" class="hover:text-secondary transition py-2">採用情報</a>
+                <a href="#access" class="hover:text-secondary transition py-2">アクセス</a>
+                <a href="#contact" class="bg-secondary hover:bg-blue-500 text-white px-5 py-2 rounded-full transition shadow-lg">
+                    お問い合わせ
+                </a>
+            </nav>
+
+            <div class="xl:hidden">
+                <button id="menu-btn" type="button" class="text-primary hover:text-secondary focus:outline-none p-2">
+                    <svg class="h-7 w-7 fill-current" viewBox="0 0 24 24">
+                        <path d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0-2z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg xl:hidden flex-col border-t max-h-[80vh] overflow-y-auto">
+            <a href="#policy" class="block py-3 px-4 hover:bg-gray-50 border-b">会社方針</a>
+            <a href="#company" class="block py-3 px-4 hover:bg-gray-50 border-b">企業概要</a>
+            <a href="#service" class="block py-3 px-4 hover:bg-gray-50 border-b">業務内容</a>
+            <a href="#recruit" class="block py-3 px-4 hover:bg-gray-50 border-b">採用情報</a>
+            <a href="#access" class="block py-3 px-4 hover:bg-gray-50 border-b">アクセス</a>
+            <a href="#e-create" class="block py-3 px-4 hover:bg-gray-50 border-b">グループ会社 (E-クリエイト)</a>
+            <a href="#infection" class="block py-3 px-4 hover:bg-gray-50 border-b">特設ページ (感染症対策)</a>
+            <a href="#event" class="block py-3 px-4 hover:bg-gray-50 border-b">イベント</a>
+            <a href="#contact" class="block py-4 px-4 bg-gray-50 text-center text-secondary font-bold">お問い合わせ</a>
+        </div>
+    </header>
+
+    <section class="hero-bg h-screen min-h-[600px] flex items-center justify-center text-white">
+        <div class="absolute inset-0 bg-primary/50 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent"></div>
+        
+        <div class="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center pt-16">
+            <div class="text-left">
+                <span class="inline-block py-1 px-3 border border-white/50 rounded-full text-sm mb-4 tracking-wider bg-white/10 backdrop-blur">
+                    電気工事・自動制御システム・CO2削減のプロ集団
+                </span>
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight drop-shadow-lg">
+                    技術と誠意で80年、<br>
+                    そして<span class="text-secondary">100年へ</span>。
+                </h1>
+                <p class="text-lg md:text-xl mb-8 text-gray-200 leading-relaxed max-w-lg">
+                    他社に負けない低価格、敏速な対応。<br>
+                    お客様の立場に立った提案をいたします。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-accent hover:bg-orange-600 text-white text-center font-bold py-4 px-8 rounded shadow-lg transition transform hover:-translate-y-1">
+                        ご相談・お見積もり
+                    </a>
+                    <a href="#service" class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white text-white text-center font-bold py-4 px-8 rounded shadow transition">
+                        事業内容を見る
+                    </a>
+                </div>
+            </div>
+            <div class="hidden md:block relative">
+                 <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20 max-w-sm ml-auto text-sm">
+                    <h3 class="font-bold text-lg mb-2 border-b border-white/30 pb-2">Information</h3>
+                    <p class="mb-2"><strong>グループ会社:</strong> 株式会社 E-クリエイト</p>
+                    <p class="mb-2"><strong>お問い合わせ:</strong> TEL. 055-241-9231</p>
+                    <p><strong>所在地:</strong> 甲府市高室町688-2</p>
+                 </div>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#policy" class="text-white opacity-80 hover:opacity-100">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <section id="policy" class="py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <h4 class="text-secondary font-bold tracking-wider mb-2">OUR POLICY</h4>
+                    <h2 class="text-3xl font-bold text-primary mb-6">会社方針</h2>
+                    <div class="bg-blue-50 p-8 rounded-xl border-l-4 border-accent mb-8">
+                        <h3 class="font-bold text-xl mb-4 text-slate-800">経営理念・目標</h3>
+                        <ul class="space-y-2 font-bold text-primary text-lg">
+                            <li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i>他社に負けない低価格</li>
+                            <li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i>敏速な対応</li>
+                            <li class="flex items-center"><i class="fas fa-check text-accent mr-3"></i>お客様の立場に立った提案</li>
+                        </ul>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        1946年（昭和21年）の創業以来、「技術と誠意」をモットーに歩んでまいりました。
+                        2014年には株式会社E-クリエイトをグループに加え、新分野へも挑戦し続けています。
+                    </p>
+                    <p class="text-right font-bold text-primary">代表取締役 深澤 俊二</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80" alt="ミーティング風景" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="company" class="py-20 bg-light">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">企業概要</h2>
+            <div class="bg-white rounded-xl shadow p-8 mb-12">
+                <table class="w-full text-left border-collapse">
+                    <tbody class="divide-y divide-gray-100">
+                        <tr><th class="py-4 pl-4 font-bold text-primary w-1/3">社名</th><td class="py-4 text-gray-700">株式会社 新ニホンテック</td></tr>
+                        <tr><th class="py-4 pl-4 font-bold text-primary">代表者</th><td class="py-4 text-gray-700">代表取締役 深澤 俊二</td></tr>
+                        <tr><th class="py-4 pl-4 font-bold text-primary">本社所在地</th><td class="py-4 text-gray-700">〒400-0057 山梨県甲府市高室町688-2</td></tr>
+                        <tr><th class="py-4 pl-4 font-bold text-primary">資本金</th><td class="py-4 text-gray-700">4,800万円</td></tr>
+                        <tr><th class="py-4 pl-4 font-bold text-primary">創業</th><td class="py-4 text-gray-700">1946年（昭和21年）10月</td></tr>
+                        <tr><th class="py-4 pl-4 font-bold text-primary">設立</th><td class="py-4 text-gray-700">1952年（昭和27年）4月</td></tr>
+                        <tr><th class="py-4 pl-4 font-bold text-primary">従業員数</th><td class="py-4 text-gray-700">20名（協力会社 8社）</td></tr>
+                        <tr><th class="py-4 pl-4 font-bold text-primary">取得許可番号</th><td class="py-4 text-gray-700">電気工事業 山梨県知事許可（特-24）第984号<br>消防施設工事業 山梨県知事許可（般-24）第984号</td></tr>
+                        <tr><th class="py-4 pl-4 font-bold text-primary">取引銀行</th><td class="py-4 text-gray-700">三井住友銀行、りそな銀行、山梨中央銀行、山梨信用金庫</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow p-8">
+                <h3 class="font-bold text-xl mb-4 text-primary border-b pb-2">沿革</h3>
+                <ul class="space-y-4 text-sm md:text-base">
+                    <li class="flex"><span class="font-bold w-24 flex-shrink-0">1946.10</span><span>向山順慶電気工事業として創業</span></li>
+                    <li class="flex"><span class="font-bold w-24 flex-shrink-0">1952.04</span><span>有限会社辻電機商会設立</span></li>
+                    <li class="flex"><span class="font-bold w-24 flex-shrink-0">1989.05</span><span>株式会社 新二ホンテックへ社名変更</span></li>
+                    <li class="flex"><span class="font-bold w-24 flex-shrink-0">2014.04</span><span>グループ会社 株式会社E-クリエイト設立</span></li>
+                    <li class="flex"><span class="font-bold w-24 flex-shrink-0">2021.10</span><span>創立75周年</span></li>
+                    <li class="flex"><span class="font-bold w-24 flex-shrink-0 text-accent">2026.10</span><span class="font-bold text-accent">創立80周年（予定）</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="service" class="py-24 bg-primary text-white relative">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+             <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full"><path d="M0 100 L100 0 L100 100 Z" fill="white" /></svg>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <h4 class="text-secondary font-bold tracking-wider mb-2">SERVICE</h4>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">業務内容</h2>
+                <p class="text-blue-200">公共工事、建設からの受注、および工場メンテナンス等を主に行っています。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <span class="bg-secondary text-white px-2 py-1 rounded text-sm mr-2">01</span>
+                        一般木造住宅電気設備工事
+                    </h3>
+                    <p class="text-gray-600">省エネ設計等の提案・施工を行います。</p>
+                </div>
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <span class="bg-secondary text-white px-2 py-1 rounded text-sm mr-2">02</span>
+                        工場電気設備工事及びメンテナンス
+                    </h3>
+                    <p class="text-gray-600">県内の工場約60社との取引実績があります。</p>
+                </div>
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <span class="bg-secondary text-white px-2 py-1 rounded text-sm mr-2">03</span>
+                        自動制御盤 設計・製作
+                    </h3>
+                    <p class="text-gray-600">シーケンスソフト設計・調整まで対応。緊急対応能力に定評があります。</p>
+                </div>
+                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-primary mb-4 flex items-center">
+                        <span class="bg-secondary text-white px-2 py-1 rounded text-sm mr-2">04</span>
+                        その他設備工事
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-600">
+                        <li>自動火災報知器法定点検</li>
+                        <li>建設付帯電気設備工事</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recruit" class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">採用情報</h2>
+                <p class="text-gray-600">技術と誠意で未来を作る仲間を募集しています。</p>
+            </div>
+            
+            <div class="border-2 border-gray-200 rounded-xl overflow-hidden">
+                <table class="w-full text-left">
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="bg-gray-50"><th class="p-4 font-bold text-primary w-1/3">募集職種</th><td class="p-4">電気工事技術者、制御技術者</td></tr>
+                        <tr><th class="p-4 font-bold text-primary">募集対象</th><td class="p-4">高卒以上、経験者・未経験者（第二新卒まで可）</td></tr>
+                        <tr class="bg-gray-50"><th class="p-4 font-bold text-primary">勤務地</th><td class="p-4">本社（山梨県甲府市高室町688-2）</td></tr>
+                        <tr><th class="p-4 font-bold text-primary">給与</th><td class="p-4">月給 17万円 ～ 26.2万円（経験・資格を考慮）</td></tr>
+                        <tr class="bg-gray-50"><th class="p-4 font-bold text-primary">勤務時間</th><td class="p-4">08:30 ～ 17:30</td></tr>
+                        <tr><th class="p-4 font-bold text-primary">休日休暇</th><td class="p-4">会社カレンダー、夏期休暇、年末年始休暇</td></tr>
+                        <tr class="bg-gray-50"><th class="p-4 font-bold text-primary">福利厚生</th><td class="p-4">各種社会保険完備、通勤手当など</td></tr>
+                        <tr><th class="p-4 font-bold text-primary">応募方法</th><td class="p-4">履歴書と職務経歴書をメールまたは郵送</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="e-create" class="py-20 bg-slate-800 text-white">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <span class="bg-secondary text-white text-xs px-2 py-1 rounded mb-2 inline-block">グループ会社</span>
+                    <h2 class="text-3xl font-bold mb-4">株式会社 E-クリエイト</h2>
+                    <p class="text-gray-300 font-bold mb-6">省力自動機の設計・制作・自動制御システムのプロ集団</p>
+                    
+                    <div class="space-y-4 text-sm text-gray-300">
+                        <p><strong>設立:</strong> 2014年4月2日</p>
+                        <p><strong>代表者:</strong> 深澤 俊二</p>
+                        <p><strong>所在地:</strong> 〒400-0057 山梨県甲府市高室町688-2（新二ホンテック内）</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 bg-white/10 p-6 rounded-lg backdrop-blur-sm">
+                    <h3 class="font-bold text-lg mb-4 text-secondary border-b border-gray-600 pb-2">事業内容</h3>
+                    <ul class="space-y-2 text-sm text-gray-200">
+                        <li class="flex items-start"><i class="fas fa-check text-secondary mt-1 mr-2"></i>機械設計、電気設計、基板回路設計、制御ソフトウェア、アッセンブリ</li>
+                        <li class="flex items-start"><i class="fas fa-check text-secondary mt-1 mr-2"></i>卓上サイズ装置・レーザーマーカー装置の開発・設計・製作</li>
+                        <li class="flex items-start"><i class="fas fa-check text-secondary mt-1 mr-2"></i>操作パネル用基板Assy、装置制御盤Assyの設計・製作</li>
+                        <li class="flex items-start"><i class="fas fa-check text-secondary mt-1 mr-2"></i>3D-CADを用いた装置外観図作成、筐体フレーム構造解析</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-5xl grid md:grid-cols-2 gap-12">
+            <div id="infection">
+                <h3 class="text-2xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-shield-alt text-accent mr-3"></i>感染症対策
+                </h3>
+                <div class="bg-green-50 p-6 rounded-lg border border-green-100">
+                    <p class="mb-4 text-sm">社内および現場における感染症対策を実施しています。</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center bg-white p-3 rounded shadow-sm"><span class="font-bold text-green-700 mr-2">指先消毒・除菌</span>玄関や居室入口にアルコール消毒液を設置</li>
+                        <li class="flex items-center bg-white p-3 rounded shadow-sm"><span class="font-bold text-green-700 mr-2">空間除菌</span>各居室に「次亜塩素酸 空間除菌脱臭機」を設置</li>
+                        <li class="flex items-center bg-white p-3 rounded shadow-sm"><span class="font-bold text-green-700 mr-2">飛沫対策</span>個人デスク間を抗菌フィルムで隔離</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="event">
+                <h3 class="text-2xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-glass-cheers text-accent mr-3"></i>イベント
+                </h3>
+                <div class="bg-orange-50 p-6 rounded-lg border border-orange-100">
+                    <p class="mb-4 text-sm">社内行事や記念イベントの様子です。</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-3 rounded text-center shadow-sm font-bold text-orange-800">75周年新年会</div>
+                        <div class="bg-white p-3 rounded text-center shadow-sm font-bold text-orange-800">70周年記念会</div>
+                        <div class="bg-white p-3 rounded text-center shadow-sm font-bold text-orange-800">納涼BBQ</div>
+                        <div class="bg-white p-3 rounded text-center shadow-sm font-bold text-orange-800">50周年記念</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="access" class="py-20 bg-light">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-bold text-primary mb-8 text-center">アクセス</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="bg-white p-6 rounded-lg shadow mb-6">
+                        <h4 class="font-bold text-lg mb-2 text-primary">本社</h4>
+                        <p>〒400-0057 山梨県甲府市高室町688-2</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow mb-6">
+                        <h4 class="font-bold text-lg mb-2 text-primary">営業所</h4>
+                        <p>〒400-0305 山梨県南アルプス市十五所160-1</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h4 class="font-bold text-lg mb-2 text-primary"><i class="fas fa-car mr-2"></i>自動車でのアクセス</h4>
+                        <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                            <li>中央自動車道「甲府南インター」下車</li>
+                            <li>新・新平和通りを北上し、新山梨環状道路へ</li>
+                            <li>県道29号に乗り、最初の信号を右折して約3分</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="bg-gray-300 rounded-lg min-h-[300px] flex items-center justify-center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3244.123456789!2d138.56789!3d35.67890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDM2JzQ1LjYiTiAxMznCsDQyJzAwLjAiRQ!5e0!3m2!1sja!2sjp!4v1600000000000!5m2!1sja!2sjp" width="100%" height="100%" style="border:0; min-height: 300px; border-radius: 0.5rem;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-primary text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">お問い合わせ</h2>
+            <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto text-blue-100">
+                お急ぎのトラブル対応から、将来の設備計画まで。<br>
+                まずはお話をお聞かせください。
+            </p>
+
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 max-w-4xl mx-auto border border-white/20 shadow-2xl">
+                <div class="grid md:grid-cols-2 gap-8 items-center divide-y md:divide-y-0 md:divide-x divide-white/20">
+                    <div class="pb-8 md:pb-0">
+                        <p class="text-blue-200 font-bold mb-2 text-sm tracking-wider">お電話でのお問い合わせ</p>
+                        <a href="tel:055-241-9231" class="text-4xl md:text-5xl font-bold hover:text-secondary transition block mb-2 font-mono">
+                            055-241-9231
+                        </a>
+                        <p class="text-sm text-blue-200">平日 09:00～17:30 / FAX: 055-241-9223</p>
+                    </div>
+                    <div class="pt-8 md:pt-0">
+                        <p class="text-blue-200 font-bold mb-4 text-sm tracking-wider">メールでのお問い合わせ</p>
+                        <a href="mailto:shinnihontec@shinnihontec.co.jp" class="inline-flex items-center justify-center bg-secondary hover:bg-white hover:text-primary text-white font-bold py-4 px-10 rounded-full transition duration-300 shadow-lg w-full md:w-auto group">
+                            <i class="fas fa-envelope mr-2"></i> メールを送信
+                        </a>
+                        <p class="text-sm text-blue-200 mt-4 font-mono">shinnihontec@shinnihontec.co.jp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center md:text-left">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">株式会社 新ニホンテック</h3>
+                    <p class="text-sm leading-relaxed">
+                        〒400-0057 山梨県甲府市高室町688-2<br>
+                        TEL: 055-241-9231 / FAX: 055-241-9223
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">メニュー</h4>
+                    <div class="flex flex-col md:flex-row gap-8 text-sm">
+                        <ul class="space-y-2">
+                            <li><a href="#" class="hover:text-white transition">トップページ</a></li>
+                            <li><a href="#policy" class="hover:text-white transition">会社方針</a></li>
+                            <li><a href="#company" class="hover:text-white transition">企業概要</a></li>
+                            <li><a href="#service" class="hover:text-white transition">業務内容</a></li>
+                        </ul>
+                        <ul class="space-y-2">
+                            <li><a href="#recruit" class="hover:text-white transition">採用情報</a></li>
+                            <li><a href="#access" class="hover:text-white transition">アクセス</a></li>
+                            <li><a href="#e-create" class="hover:text-white transition">グループ会社</a></li>
+                            <li><a href="#contact" class="hover:text-white transition">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center md:text-right">
+                    <a href="#top" class="inline-block bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded transition">
+                        <i class="fas fa-arrow-up mr-2"></i> ページトップへ
+                    </a>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center text-sm">
+                <p>© SHINNIHONTEC CO., LTD. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // オープニング演出用スクリプト
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('opening-splash').classList.add('splash-hidden');
+            }, 3500);
+        });
+
+        // モバイルメニュー用スクリプト
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+    </script>
+</body>
+</html>
