@@ -65,17 +65,22 @@
             <img src="image1.jpg" class="w-full h-full object-cover zoom-img grayscale" alt="Opening">
             <div class="absolute inset-0 bg-black/70"></div>
         </div>
+
         <div class="relative z-10 text-center text-white p-4">
-            <p class="text-sm md:text-lg tracking-[0.3em] mb-4 text-accent fade-up font-eng">SINCE 1946</p>
-            <h1 class="text-4xl md:text-7xl font-black mb-4 tracking-wider fade-up leading-tight font-eng">
-                80th<br>ANNIVERSARY
+            <p class="text-sm md:text-lg tracking-[0.3em] mb-2 text-accent fade-up font-eng">ESTABLISHED IN</p>
+            <h1 class="text-6xl md:text-9xl font-black mb-6 tracking-wider fade-up leading-tight font-eng">
+                1946
             </h1>
-            <div class="w-16 h-1 bg-white mx-auto mb-6 fade-up"></div>
-            <p class="text-sm md:text-base tracking-widest fade-up text-gray-300">
-                おかげさまで創業80周年<br>
-                株式会社 新ニホンテック
+            <div class="w-24 h-1 bg-white mx-auto mb-6 fade-up"></div>
+            <p class="text-sm md:text-base tracking-widest fade-up text-gray-300 leading-relaxed">
+                技術と誠意で、未来を灯す。<br>
+                <span class="text-xs opacity-70 mt-2 block">SHINNIHON TEC CO., LTD.</span>
             </p>
         </div>
+
+        <button onclick="skipAnimation()" class="absolute bottom-8 right-8 z-50 text-white border border-white/50 bg-black/30 hover:bg-white hover:text-gray-900 px-6 py-2 rounded-full text-xs font-bold tracking-widest transition duration-300 backdrop-blur-sm fade-up">
+            SKIP <i class="fas fa-chevron-right ml-1"></i>
+        </button>
     </div>
 
     <header class="bg-white/95 backdrop-blur shadow-md fixed w-full z-50 transition-all duration-300">
@@ -659,28 +664,51 @@
     </footer>
 
     <script>
-        // オープニング演出用スクリプト
+        // --- オープニング演出用スクリプト (SKIP機能付き) ---
+        
+        // タイマーIDを保存する変数
+        let splashTimer;
+
+        // アニメーション終了処理
+        function finishSplash() {
+            const splash = document.getElementById('opening-splash');
+            if (splash && !splash.classList.contains('splash-hidden')) {
+                splash.classList.add('splash-hidden');
+            }
+        }
+
+        // SKIPボタンが押された時の処理
+        function skipAnimation() {
+            clearTimeout(splashTimer); // 自動終了タイマーを解除
+            finishSplash(); // すぐに消す
+        }
+
+        // ページ読み込み時の処理
         window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('opening-splash').classList.add('splash-hidden');
-            }, 3500);
+            // 4.5秒後に自動で消すタイマーをセット
+            splashTimer = setTimeout(finishSplash, 4500); 
         });
+        // ---------------------------------
 
         // モバイルメニュー用スクリプト
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-        });
-
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
+        if(menuBtn){
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('flex');
             });
-        });
+        }
+
+        if(mobileMenu){
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                });
+            });
+        }
     </script>
 </body>
 </html>
