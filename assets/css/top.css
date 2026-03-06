@@ -14,11 +14,6 @@
     transition: opacity 1.5s ease-in-out, visibility 1.5s;
 }
 
-#opening-splash .fade-up.font-eng {
-    /* ★金色(accent)をCSS変数から読み込むように変更 */
-    color: var(--color-accent);
-}
-
 .splash-hidden { 
     opacity: 0; 
     visibility: hidden; 
