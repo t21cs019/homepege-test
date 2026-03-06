@@ -1,0 +1,23 @@
+/* --- テーマカラーの定義 (CSS変数) --- */
+:root {
+  /* ==========================================
+     ★デフォルト: 緑テーマ (ロゴカラーベース)
+     ========================================== */
+  --color-primary: #065F46;   /* 濃い緑 (emerald-800) - 信頼・伝統 */
+  --color-secondary: #10B981; /* 明るい緑 (emerald-500) - 技術・革新 */
+
+  /* --- 共通カラー --- */
+  --color-accent: #f59e0b;    /* 金色・オレンジ (強調・アクセント) - どのテーマでも合います */
+  --color-light: #f3f4f6;     /* 薄いグレー */
+}
+
+/* 全ページ共通のスタイル */
+body { font-family: 'Noto Sans JP', sans-serif; }
+.font-eng { font-family: 'Oswald', sans-serif; }
+.scroll-smooth { scroll-behavior: smooth; }
+
+/* フッターのリンクが前面に来るように調整 */
+footer a {
+    position: relative;
+    z-index: 20;
+}
