@@ -9,11 +9,12 @@
         tailwind.config = {
             theme: {
                 extend: {
+                    // ★重要: 具体的な色コードではなく、CSS変数(var)を指定するように変更
                     colors: {
-                        primary: 'var(--color-primary)',
-                        secondary: 'var(--color-secondary)',
-                        accent: 'var(--color-accent)',
-                        light: 'var(--color-light)',
+                        primary: 'var(--color-primary)',    // メインの濃い色
+                        secondary: 'var(--color-secondary)', // サブの明るい色
+                        accent: 'var(--color-accent)',      // アクセントカラー（金色）
+                        light: 'var(--color-light)',        // 薄いグレー
                     }
                 }
             }
@@ -28,7 +29,7 @@
 </head>
 <body class="text-gray-800 scroll-smooth">
 
-    <div id="opening-splash" style="display: none;">
+    <!-- <div id="opening-splash">
         <div class="absolute inset-0 overflow-hidden">
             <img src="/assets/images/image1.jpg" class="w-full h-full object-cover zoom-img grayscale" alt="Opening">
             <div class="absolute inset-0 bg-black/70"></div>
@@ -36,26 +37,25 @@
 
         <div class="relative z-10 text-center text-white p-4">
             <p class="text-sm md:text-lg tracking-[0.3em] mb-2 text-accent fade-up font-eng">ESTABLISHED IN</p>
-            <h1 class="text-6xl md:text-9xl font-black mb-6 tracking-wider fade-up leading-tight font-eng text-white" style="color: #ffffff !important;">
-                2014
+            <h1 class="text-6xl md:text-9xl font-black mb-6 tracking-wider fade-up leading-tight font-eng">
+                1946
             </h1>
             <div class="w-24 h-1 bg-white mx-auto mb-6 fade-up"></div>
             <p class="text-sm md:text-base tracking-widest fade-up text-gray-300 leading-relaxed">
-                省力自動機・制御システムのプロ集団<br>
-                株式会社 E-クリエイト<br>
-                <span class="text-xs opacity-70 mt-2 block">E-CREATE CO., LTD.</span>
+                おかげさまで創業80周年<br>
+                株式会社 新ニホンテック<br>
+                <span class="text-xs opacity-70 mt-2 block">SHINNIHON TEC CO., LTD.</span>
             </p>
         </div>
 
         <button onclick="skipAnimation()" class="absolute bottom-8 right-8 z-50 text-white border border-white/50 bg-black/30 hover:bg-white hover:text-gray-900 px-6 py-2 rounded-full text-xs font-bold tracking-widest transition duration-300 backdrop-blur-sm fade-up">
             SKIP <i class="fas fa-chevron-right ml-1"></i>
         </button>
-    </div>
+    </div> -->
 
     <header class="bg-white/95 backdrop-blur shadow-md fixed w-full z-50 transition-all duration-300">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <a href="/" class="text-xl md:text-2xl font-bold text-primary flex items-center group leading-none">
-                <img src="/assets/images/logo-ecreate.png" alt="E-クリエイト" class="h-10 md:h-12 w-auto mr-3 group-hover:opacity-80 transition">
                 <div>
                     <span class="block text-xs md:text-sm text-gray-500 font-normal">機械設計・電気設計・制御ソフトウェア</span>
                     株式会社 E-クリエイト
@@ -65,7 +65,7 @@
             <nav class="hidden xl:flex space-x-6 text-sm font-bold text-gray-700 items-center">
                 <a href="#about" class="hover:text-secondary transition py-2 border-b-2 border-transparent hover:border-secondary">企業情報</a>
                 <a href="#service" class="hover:text-secondary transition py-2 border-b-2 border-transparent hover:border-secondary">事業内容</a>
-                <a href="#special" class="hover:text-secondary transition py-2 border-b-2 border-transparent hover:border-secondary">お知らせ</a>
+                <a href="#special" class="hover:text-secondary transition py-2 border-b-2 border-transparent hover:border-secondary">特設・イベント</a>
                 <a href="#recruit" class="hover:text-secondary transition py-2 border-b-2 border-transparent hover:border-secondary">採用情報</a>
                 <a href="#access" class="hover:text-secondary transition py-2 border-b-2 border-transparent hover:border-secondary">アクセス</a>
                 <a href="#contact" class="bg-secondary hover:bg-blue-500 text-white px-6 py-2 rounded-full transition shadow-lg transform hover:-translate-y-0.5">
@@ -85,7 +85,7 @@
         <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg xl:hidden flex-col border-t max-h-[80vh] overflow-y-auto">
             <a href="#about" class="block py-3 px-4 hover:bg-gray-50 border-b">企業情報</a>
             <a href="#service" class="block py-3 px-4 hover:bg-gray-50 border-b">事業内容</a>
-            <a href="#special" class="block py-3 px-4 hover:bg-gray-50 border-b">お知らせ</a>
+            <a href="#special" class="block py-3 px-4 hover:bg-gray-50 border-b">特設ページ・イベント</a>
             <a href="#recruit" class="block py-3 px-4 hover:bg-gray-50 border-b">採用情報</a>
             <a href="#access" class="block py-3 px-4 hover:bg-gray-50 border-b">アクセス</a>
             <a href="#contact" class="block py-4 px-4 bg-gray-50 text-center text-secondary font-bold">お問い合わせ</a>
@@ -93,8 +93,7 @@
     </header>
 
     <section class="hero-bg h-screen min-h-[600px] flex items-center justify-center text-white">
-        <div class="absolute inset-0 bg-primary/50 mix-blend-multiply"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent to-50%"></div>
         
         <div class="relative z-10 container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center pt-16">
             <div class="text-left">
@@ -168,7 +167,56 @@
         </div>
     </section>
 
-    <section id="strength" class="py-20 bg-white border-t">
+    <section id="company" class="py-20 bg-light border-t">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">企業概要</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow p-8 h-full">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <tbody class="divide-y divide-gray-100">
+                            <tr><th class="py-3 font-bold text-primary w-1/3">社名</th><td class="py-3">株式会社E-クリエイト</td></tr>
+                            <tr><th class="py-3 font-bold text-primary">代表者</th><td class="py-3">代表取締役 深澤 俊二</td></tr>
+                            <tr><th class="py-3 font-bold text-primary">本社</th><td class="py-3">〒400-0057<br>山梨県甲府市高室町688-2<br>(新二ホンテック内)</td></tr>
+                            <tr><th class="py-3 font-bold text-primary">資本金</th><td class="py-3">500万円</td></tr>
+                            <tr><th class="py-3 font-bold text-primary">設立</th><td class="py-3">2014年 4月2日</td></tr>
+                            <tr><th class="py-3 font-bold text-primary">従業員数</th><td class="py-3">11名（2022年 7月現在）</td></tr>
+                            <tr><th class="py-3 font-bold text-primary">取引銀行</th><td class="py-3">りそな銀行、山梨中央銀行</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="flex flex-col gap-6">
+                    <div class="bg-white rounded-xl shadow p-8">
+                        <h3 class="font-bold text-lg mb-4 text-primary border-b pb-2">沿革</h3>
+                        <ul class="space-y-3 text-sm">
+                            <li class="flex"><span class="font-bold w-20 flex-shrink-0 text-gray-500">2014.04</span><span>新二ホンテックグループ<br>(株)E-クリエイト設立</span></li>
+                            <li class="flex"><span class="font-bold w-20 flex-shrink-0 text-accent">2019.04</span><span class="font-bold text-accent">創立5周年</span></li>
+                        </ul>
+                    </div>
+
+                    <a href="https://www.e-kuri.com" target="_blank" rel="noopener noreferrer" class="bg-slate-800 text-white rounded-xl shadow p-8 flex-1 block group hover:bg-slate-700 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 relative">
+                        
+                        <div class="absolute top-6 right-6 text-slate-500 group-hover:text-white transition">
+                            <i class="fas fa-external-link-alt"></i>
+                        </div>
+
+                        <span class="bg-secondary text-white text-xs px-2 py-1 rounded mb-2 inline-block">グループ会社</span>
+                        <h3 class="font-bold text-lg mb-2">株式会社 E-クリエイト</h3>
+                        <p class="text-gray-300 text-xs mb-4">省力自動機の設計・制作・自動制御システムのプロ集団</p>
+                        <ul class="space-y-1 text-xs text-gray-400 list-disc list-inside">
+                            <li>機械設計、電気設計、基板回路設計</li>
+                            <li>卓上サイズ装置・レーザーマーカー装置開発</li>
+                            <li>操作パネル用基板Assy、装置制御盤Assy</li>
+                            <li>3D-CADを用いた筐体フレーム構造解析</li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="strength" class="py-20 bg-white">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">選ばれる3つの理由</h2>
@@ -229,13 +277,13 @@
             <div class="text-center mb-16">
                 <h4 class="text-secondary font-bold tracking-wider mb-2">SERVICE</h4>
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">事業内容</h2>
-                <p class="text-blue-200">構想から設計、アッセンブリに至るまで一貫して対応します。</p>
+                <p class="text-blue-200">構想から設計、アッセンブリに至るまで一貫して対応します</p>
             </div>
 
             <div class="space-y-12">
                 <div class="flex flex-col md:flex-row items-center bg-white text-gray-800 rounded-xl overflow-hidden shadow-2xl">
                     <div class="md:w-1/2 h-64 md:h-auto">
-                         <img src="/assets/images/service1.jpg" alt="装置開発" class="w-full h-full object-cover">
+                         <img src="/assets/images/service1.jpg" alt="電気工事" class="w-full h-full object-cover">
                     </div>
                     <div class="md:w-1/2 p-8 md:p-12">
                         <div class="flex items-center mb-4">
@@ -257,7 +305,7 @@
 
                 <div class="flex flex-col md:flex-row-reverse items-center bg-white text-gray-800 rounded-xl overflow-hidden shadow-2xl">
                     <div class="md:w-1/2 h-64 md:h-auto">
-                        <img src="/assets/images/service2.jpg" alt="基板回路設計" class="w-full h-full object-cover">
+                        <img src="/assets/images/service2.jpg" alt="制御盤" class="w-full h-full object-cover">
                     </div>
                     <div class="md:w-1/2 p-8 md:p-12">
                         <div class="flex items-center mb-4">
@@ -279,7 +327,7 @@
                  
                  <div class="flex flex-col md:flex-row items-center bg-white text-gray-800 rounded-xl overflow-hidden shadow-2xl">
                     <div class="md:w-1/2 h-64 md:h-auto">
-                         <img src="/assets/images/service3.jpg" alt="3D解析" class="w-full h-full object-cover">
+                         <img src="/assets/images/service3.jpg" alt="省エネ" class="w-full h-full object-cover">
                     </div>
                     <div class="md:w-1/2 p-8 md:p-12">
                         <div class="flex items-center mb-4">
@@ -302,55 +350,6 @@
         </div>
     </section>
 
-    <section id="company" class="py-20 bg-light border-t">
-        <div class="container mx-auto px-4 max-w-5xl">
-            <h2 class="text-3xl font-bold text-primary mb-12 text-center">企業概要</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-xl shadow p-8 h-full">
-                    <table class="w-full text-left border-collapse text-sm">
-                        <tbody class="divide-y divide-gray-100">
-                            <tr><th class="py-3 font-bold text-primary w-1/3">社名</th><td class="py-3">株式会社 E-クリエイト</td></tr>
-                            <tr><th class="py-3 font-bold text-primary">代表者</th><td class="py-3">代表取締役 深澤 俊二</td></tr>
-                            <tr><th class="py-3 font-bold text-primary">役員</th><td class="py-3">取締役 斎藤 健</td></tr>
-                            <tr><th class="py-3 font-bold text-primary">所在地</th><td class="py-3">〒400-0057<br>山梨県甲府市高室町688-2<br><span class="text-xs text-gray-500">(新ニホンテック内)</span></td></tr>
-                            <tr><th class="py-3 font-bold text-primary">資本金</th><td class="py-3">500万円</td></tr>
-                            <tr><th class="py-3 font-bold text-primary">設立</th><td class="py-3">2014年（平成26年）4月2日</td></tr>
-                            <tr><th class="py-3 font-bold text-primary">従業員数</th><td class="py-3">11名</td></tr>
-                            <tr><th class="py-3 font-bold text-primary">取引銀行</th><td class="py-3">山梨中央銀行 城南支店、りそな銀行 甲府支店</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="flex flex-col gap-6">
-                    <div class="bg-white rounded-xl shadow p-8">
-                        <h3 class="font-bold text-lg mb-4 text-primary border-b pb-2">沿革</h3>
-                        <ul class="space-y-3 text-sm">
-                            <li class="flex"><span class="font-bold w-20 flex-shrink-0 text-gray-500">2014.04</span><span>株式会社 E-クリエイト設立</span></li>
-                            <li class="flex"><span class="font-bold w-20 flex-shrink-0 text-gray-500">2015.08</span><span>本格的な省力自動機の設計受託を開始</span></li>
-                            <li class="flex"><span class="font-bold w-20 flex-shrink-0 text-gray-500">2018.10</span><span>3D-CAD解析システムの導入</span></li>
-                            <li class="flex"><span class="font-bold w-20 flex-shrink-0 text-accent">2024.04</span><span class="font-bold text-accent">設立10周年を迎えました</span></li>
-                        </ul>
-                    </div>
-
-                    <a href="https://www.shinnihontec.co.jp/" target="_blank" rel="noopener noreferrer" class="bg-slate-800 text-white rounded-xl shadow p-8 flex-1 block group hover:bg-slate-700 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 relative">
-                        <div class="absolute top-6 right-6 text-slate-500 group-hover:text-white transition">
-                            <i class="fas fa-external-link-alt"></i>
-                        </div>
-                        <span class="bg-secondary text-white text-xs px-2 py-1 rounded mb-2 inline-block">グループ会社</span>
-                        <h3 class="font-bold text-lg mb-2">株式会社 新ニホンテック</h3>
-                        <p class="text-gray-300 text-xs mb-4">電気工事・自動制御システム・CO2削減のプロ集団</p>
-                        <ul class="space-y-1 text-xs text-gray-400 list-disc list-inside">
-                            <li>公共工事、工場電気設備メンテナンス</li>
-                            <li>制御盤設計・製作、PLCソフト開発</li>
-                            <li>LED化提案、太陽光発電設備</li>
-                        </ul>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="works" class="py-24 bg-light">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -361,7 +360,7 @@
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="bg-white rounded shadow hover:shadow-lg transition group cursor-pointer">
                     <div class="overflow-hidden h-48 relative">
-                         <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="卓上装置">
+                         <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="施工事例">
                          <div class="absolute top-2 left-2 bg-primary text-white text-xs px-2 py-1 rounded">装置開発</div>
                     </div>
                     <div class="p-4">
@@ -371,7 +370,7 @@
                 </div>
                  <div class="bg-white rounded shadow hover:shadow-lg transition group cursor-pointer">
                     <div class="overflow-hidden h-48 relative">
-                         <img src="assets/images/works2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="制御盤">
+                         <img src="assets/images/works2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="施工事例">
                          <div class="absolute top-2 left-2 bg-primary text-white text-xs px-2 py-1 rounded">制御盤Assy</div>
                     </div>
                     <div class="p-4">
@@ -381,7 +380,7 @@
                 </div>
                  <div class="bg-white rounded shadow hover:shadow-lg transition group cursor-pointer">
                     <div class="overflow-hidden h-48 relative">
-                         <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="レーザーマーカー">
+                         <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="施工事例">
                          <div class="absolute top-2 left-2 bg-primary text-white text-xs px-2 py-1 rounded">自動機</div>
                     </div>
                     <div class="p-4">
@@ -433,7 +432,7 @@
 
     <section id="special" class="py-20 bg-primary/5">
         <div class="container mx-auto px-4 max-w-5xl">
-            <h2 class="text-3xl font-bold text-primary mb-12 text-center">お知らせ</h2>
+            <h2 class="text-3xl font-bold text-primary mb-12 text-center">特設ページ・イベント</h2>
             <div class="grid md:grid-cols-2 gap-12">
                 <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-green-500">
                     <h3 class="text-2xl font-bold text-primary mb-6 flex items-center">
@@ -456,15 +455,27 @@
                                     <span class="text-xs text-gray-600">各居室に「次亜塩素酸 空間除菌脱臭機」を設置</span>
                                 </div>
                             </li>
+                            <li class="flex items-start">
+                                <span class="bg-green-100 text-green-700 p-1 rounded mr-3 text-xs">対策</span>
+                                <div>
+                                    <span class="block font-bold text-gray-800 text-sm">飛沫対策</span>
+                                    <span class="text-xs text-gray-600">個人デスク間を抗菌フィルムで隔離</span>
+                                </div>
+                            </li>
                         </ul>
+                        <div class="text-center">
+                            <a href="#" class="inline-block bg-green-600 text-white text-sm font-bold py-2 px-6 rounded-full hover:bg-green-700 transition shadow">
+                                詳細を見る
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md border-t-4 border-orange-500">
                     <h3 class="text-2xl font-bold text-primary mb-6 flex items-center">
-                        <i class="fas fa-bullhorn text-orange-500 mr-3"></i>News & Topics
+                        <i class="fas fa-glass-cheers text-orange-500 mr-3"></i>イベント
                     </h3>
-                    <p class="mb-4 text-sm text-gray-600">E-クリエイトからの最新情報をお届けします。</p>
+                    <p class="mb-4 text-sm text-gray-600">社内行事や記念イベントの様子を公開しています。</p>
                     
                     <div class="space-y-2">
                         <a href="#" class="block p-3 border-b border-orange-100 hover:bg-orange-50 transition rounded-lg group">
@@ -533,6 +544,7 @@
                     </div>
                 </div>
 
+                <!-- googlemap -->
                 <div class="bg-gray-300 rounded-lg min-h-[300px] flex items-center justify-center overflow-hidden shadow-inner">
                     <iframe src="https://maps.google.co.jp/maps?output=embed&q=山梨県甲府市高室町688-2" width="100%" height="100%" style="border:0; min-height: 350px;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
@@ -559,10 +571,10 @@
                     </div>
                     <div class="pt-8 md:pt-0">
                         <p class="text-blue-200 font-bold mb-4 text-sm tracking-wider">メールでのお問い合わせ</p>
-                        <a href="mailto:shinnihontec@shinnihontec.co.jp" class="inline-flex items-center justify-center bg-secondary hover:bg-white hover:text-primary text-white font-bold py-4 px-10 rounded-full transition duration-300 shadow-lg w-full md:w-auto group">
+                        <a href="mailto:info@e-kuri.com" class="inline-flex items-center justify-center bg-secondary hover:bg-white hover:text-primary text-white font-bold py-4 px-10 rounded-full transition duration-300 shadow-lg w-full md:w-auto group">
                             <i class="fas fa-envelope mr-2"></i> メールを送信
                         </a>
-                        <p class="text-sm text-blue-200 mt-4 font-mono">shinnihontec@shinnihontec.co.jp</p>
+                        <p class="text-sm text-blue-200 mt-4 font-mono">info@e-kuri.com</p>
                     </div>
                 </div>
             </div>
@@ -575,7 +587,7 @@
                 <div>
                     <h3 class="text-2xl font-bold text-white mb-4">株式会社 E-クリエイト</h3>
                     <p class="text-sm leading-relaxed">
-                        〒400-0057 山梨県甲府市高室町688-2<br>
+                        〒400-0057 山梨県甲府市高室町688-2(株式会社 新二ホンテック内)<br>
                         TEL: 055-241-9231 / FAX: 055-241-9223
                     </p>
                 </div>
@@ -585,7 +597,7 @@
                         <ul class="space-y-2">
                             <li><a href="#about" class="hover:text-white transition">企業情報</a></li>
                             <li><a href="#service" class="hover:text-white transition">事業内容</a></li>
-                            <li><a href="#special" class="hover:text-white transition">お知らせ</a></li>
+                            <li><a href="#special" class="hover:text-white transition">特設・イベント</a></li>
                         </ul>
                         <ul class="space-y-2">
                             <li><a href="#recruit" class="hover:text-white transition">採用情報</a></li>
